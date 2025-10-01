@@ -80,6 +80,6 @@ void	cleanup_game(t_data *all);
 int		copy_map(t_data *all, char ***copy);
 void	free_map(char **map);
 void	copy_grid(t_data *all);
-int	valid_type_extension(char *s);
+int		valid_type_extension(char *s);
 
 #endif

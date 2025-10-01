@@ -82,7 +82,7 @@ void	*work_window(int width, int height, t_data *all)
 		return (NULL);
 	load_textures(all->mlx_ptr, &all->texture);
 	render_map(all->map, all);
-	mlx_hook(all->win_ptr, 17, 0L, close_win, NULL);
+	mlx_hook(all->win_ptr, 17, 0L, close_win, all);
 	mlx_key_hook(all->win_ptr, key_hook, all);
 	mlx_expose_hook(all->win_ptr, expose_hook, all);
 	return (all->mlx_ptr);

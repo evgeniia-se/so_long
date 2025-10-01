@@ -24,7 +24,7 @@ void	check_collect_and_exit(t_data *all)
 	}
 	if (all->game.last_tile == 'E' && all->game.exit_flag == 1)
 	{
-		ft_printf("You are win! you ate all fish :)\n");
+		ft_printf("You are win! you ate all mouses :)\n");
 		ft_printf("Total mouves: %d\n", all->game.mouves);
 		cleanup_game(all);
 		exit(0);
