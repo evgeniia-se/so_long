@@ -52,6 +52,7 @@ typedef struct s_game
 	int		key_w;
 	int		key_a;
 	int		key_s;
+	int		key_d;
 }			t_game;
 
 typedef struct s_data

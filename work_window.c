@@ -49,7 +49,7 @@ int	key_release(int keycode, void *param)
 int	game_loop(void *param)
 {
 	t_data		*all;
-	static int	frame_count = 0;
+	static int	frame_count;
 
 	all = (t_data *)param;
 	frame_count++;
