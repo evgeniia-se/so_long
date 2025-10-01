@@ -112,4 +112,8 @@ void	gaming(t_data *all)
 	all->game.dx = 0;
 	all->game.exit_flag = 0;
 	all->game.last_tile = '0';
+	all->game.key_w = 0;
+	all->game.key_a = 0;
+	all->game.key_s = 0;
+	all->game.key_d = 0;
 }

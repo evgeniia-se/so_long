@@ -20,6 +20,7 @@
 # include <string.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <sys/time.h>
 
 typedef struct s_texture
 {
@@ -48,6 +49,9 @@ typedef struct s_game
 	int		dy;
 	int		dx;
 	char	last_tile;
+	int		key_w;
+	int		key_a;
+	int		key_s;
 }			t_game;
 
 typedef struct s_data
@@ -81,5 +85,8 @@ int		copy_map(t_data *all, char ***copy);
 void	free_map(char **map);
 void	copy_grid(t_data *all);
 int		valid_type_extension(char *s);
+int		key_press(int keycode, void *param);
+int		key_release(int keycode, void *param);
+int		game_loop(void *param);
 
 #endif

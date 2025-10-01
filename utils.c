@@ -26,21 +26,6 @@ void	remplisage(char **map, t_list *cur)
 	map[i] = NULL;
 }
 
-int	check_args(int ac, char **av)
-{
-	if (ac != 2)
-	{
-		ft_printf("Usage: %s map.ber\n", av[0]);
-		return (0);
-	}
-	if (!valid_type_extension(av[1]))
-	{
-		ft_printf("Valid extension only .ber\n");
-		return (0);
-	}
-	return (1);
-}
-
 void	load_textures(void *mlx_ptr, t_texture *texture)
 {
 	int	width;
@@ -84,6 +69,16 @@ void	render_tile(char tile, int x, int y, t_data *all)
 	else if (tile == 'E')
 		mlx_put_image_to_window(all->mlx_ptr, all->win_ptr,
 			all->texture.exit_i, x * tile_size, y * tile_size);
+}
+
+void	init_window_sizes(char **map, int *width, int *height)
+{
+	*width = 0;
+	*height = 0;
+	while (map[0][*width])
+		(*width)++;
+	while (map[*height])
+		(*height)++;
 }
 
 void	render_map(char **map, t_data *all)
