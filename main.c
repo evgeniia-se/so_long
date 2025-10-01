@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "libft/get_next_line.h"
 
 int	count_map_elements(char **map, int *player_count, int *exit_count,
 		int *collectible_count)
@@ -36,7 +35,6 @@ int	count_map_elements(char **map, int *player_count, int *exit_count,
 				(*collectible_count)++;
 			else if (map[i][j] != '1' && map[i][j] != '0')
 				return (ft_printf("Error: unknown key found in map\n"), 0);
-
 		}
 	}
 	return (1);
@@ -57,9 +55,12 @@ int	is_valid(char **map)
 	if (!count_map_elements(map, &player_count, &exit_count,
 			&collectible_count))
 		return (0);
-	if (player_count != 1 || exit_count != 1 || collectible_count < 1)
-		return (ft_printf("Error: map must have exactly 1 player, 1 exit, \
-			at least 1 collectible\n"), 0);
+	if (player_count != 1)
+		return (ft_printf("Error: map must have exactly 1 player\n"), 0);
+	else if (exit_count != 1)
+		return (ft_printf("Error: map must have exactly 1 exit\n"), 0);
+	else if (collectible_count < 1)
+		return (ft_printf("Error: map must have at least 1 collectible\n"), 0);
 	return (1);
 }
 

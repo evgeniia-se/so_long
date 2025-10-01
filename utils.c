@@ -33,6 +33,11 @@ int	check_args(int ac, char **av)
 		ft_printf("Usage: %s map.ber\n", av[0]);
 		return (0);
 	}
+	if (!valid_type_extension(av[1]))
+	{
+		ft_printf("Valid extension only .ber\n");
+		return (0);
+	}
 	return (1);
 }
 

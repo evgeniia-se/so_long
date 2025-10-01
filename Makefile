@@ -12,7 +12,7 @@
 
 NAME = so_long
 
-SOURCES = main.c gaming.c parser.c utils.c work_window.c clean.c flood_fill.c
+SOURCES = main.c gaming.c parser.c utils.c work_window.c clean.c flood_fill.c check_map.c
 OBJECTS = $(SOURCES:.c=.o)
 LIBFT = ./libft/libft.a
 
